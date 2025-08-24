@@ -1,0 +1,55 @@
+{
+  "comment": "Configuration file for crime data sources and API settings",
+  "data_sources": {
+    "crimegrade": {
+      "name": "CrimeGrade.org",
+      "base_url": "https://api.crimegrade.org/v1",
+      "description": "Primary source for Smithfield crime statistics and ratings",
+      "update_frequency": "daily",
+      "enabled": true,
+      "api_key_env": "CRIMEGRADE_API_KEY",
+      "endpoints": {
+        "crime_stats": "/crime-stats",
+        "safety_ratings": "/safety-ratings",
+        "incident_reports": "/incidents"
+      }
+    },
+    "neighborhoodscout": {
+      "name": "NeighborhoodScout",
+      "base_url": "https://api.neighborhoodscout.com/v2",
+      "description": "Secondary source for neighborhood safety data and analytics",
+      "update_frequency": "daily",
+      "enabled": true,
+      "api_key_env": "NEIGHBORHOODSCOUT_API_KEY",
+      "endpoints": {
+        "crime_data": "/crime",
+        "safety_scores": "/safety",
+        "demographics": "/demographics"
+      }
+    }
+  },
+  "location_settings": {
+    "primary_area": "Smithfield",
+    "state": "VA",
+    "coordinates": {
+      "latitude": 36.9790,
+      "longitude": -76.6319
+    },
+    "radius_miles": 10
+  },
+  "automation_settings": {
+    "data_update_schedule": "0 6 * * *",
+    "report_generation_schedule": "0 8 * * 1",
+    "notion_integration": {
+      "enabled": true,
+      "workspace_id_env": "NOTION_WORKSPACE_ID",
+      "api_key_env": "NOTION_API_KEY",
+      "database_id_env": "NOTION_DATABASE_ID"
+    }
+  },
+  "output_settings": {
+    "formats": ["json", "csv", "html"],
+    "retention_days": 365,
+    "backup_enabled": true
+  }
+}
