@@ -1,0 +1,26 @@
+[
+  {
+    "town": "Smithfield",
+    "source_url": "https://example.com/smithfield",
+    "data_format": "JSON",
+    "update_frequency": "daily"
+  },
+  {
+    "town": "North Providence",
+    "source_url": "https://example.com/north-providence",
+    "data_format": "CSV",
+    "update_frequency": "weekly"
+  },
+  {
+    "town": "Johnston",
+    "source_url": "https://example.com/johnston",
+    "data_format": "JSON",
+    "update_frequency": "daily"
+  },
+  {
+    "town": "Lincoln",
+    "source_url": "https://example.com/lincoln",
+    "data_format": "CSV",
+    "update_frequency": "weekly"
+  }
+]
